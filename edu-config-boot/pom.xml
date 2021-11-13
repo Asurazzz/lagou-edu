@@ -9,4 +9,18 @@
     <version>1.0-SNAPSHOT</version>
 
 
+    <parent>
+        <artifactId>edu-bom</artifactId>
+        <groupId>com.lagou</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

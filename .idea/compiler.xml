@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="edu-boss-boot" />
-        <module name="edu-config-boot" />
         <module name="edu-common" />
+        <module name="edu-config-boot" />
         <module name="edu-front-boot" />
         <module name="edu-gateway-boot" />
         <module name="edu-ad-boot" />
