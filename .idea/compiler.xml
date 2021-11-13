@@ -16,14 +16,14 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="edu-ad-boot" target="1.5" />
-      <module name="edu-bom" target="1.5" />
-      <module name="edu-boss-boot" target="1.5" />
-      <module name="edu-common" target="1.5" />
-      <module name="edu-config-boot" target="1.5" />
-      <module name="edu-eureka-boot" target="1.5" />
-      <module name="edu-front-boot" target="1.5" />
-      <module name="edu-gateway-boot" target="1.5" />
+      <module name="edu-ad-boot" target="1.8" />
+      <module name="edu-bom" target="1.8" />
+      <module name="edu-boss-boot" target="1.8" />
+      <module name="edu-common" target="1.8" />
+      <module name="edu-config-boot" target="1.8" />
+      <module name="edu-eureka-boot" target="1.8" />
+      <module name="edu-front-boot" target="1.8" />
+      <module name="edu-gateway-boot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
