@@ -8,9 +8,11 @@ import com.lagou.edu.ad.service.IPromotionSpaceService;
 import com.lagou.edu.dto.PromotionAdDTO;
 import com.lagou.edu.dto.PromotionSpaceDTO;
 import com.lagou.edu.remote.AdRemoteService;
+import com.lagou.edu.response.ResponseDTO;
 import com.lagou.edu.util.ConverUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -72,5 +74,70 @@ public class AdRemoteServiceImpl implements AdRemoteService {
         }
 
         return spaceDTOList;
+    }
+
+    @Override
+    @PostMapping("/space/saveOrUpdateSpace")
+    public ResponseDTO saveOrUpdateSpace(PromotionSpaceDTO spaceDTO) {
+        PromotionSpace space = ConverUtil.convert(spaceDTO, PromotionSpace.class);
+        if (space.getId() == null) {
+            space.setCreateTime(new Date());
+            space.setUpdateTime(new Date());
+            space.setIsDel(0);
+        } else {
+            space.setUpdateTime(new Date());
+        }
+        // 保存或者编辑广告位
+        ResponseDTO responseDTO = null;
+        try {
+            promotionSpaceService.saveOrUpdate(space);
+            responseDTO = ResponseDTO.success();
+        } catch (Exception ex) {
+            responseDTO = ResponseDTO.ofError(ex.getMessage());
+        }
+        return responseDTO;
+    }
+
+    @Override
+    @GetMapping("/space/getSpaceById")
+    public PromotionSpaceDTO getSpaceById(Integer id) {
+        PromotionSpace space = promotionSpaceService.getById(id);
+        return ConverUtil.convert(space, PromotionSpaceDTO.class);
+    }
+
+    @Override
+    @GetMapping("/getAllAds")
+    public List<PromotionAdDTO> getAllAds() {
+        List<PromotionAd> adList = promotionAdService.list();
+        return ConverUtil.convertList(adList, PromotionAdDTO.class);
+    }
+
+    @Override
+    @PostMapping("/saveOrUpdateAd")
+    public ResponseDTO saveOrUpdateAd(PromotionAdDTO adDTO) {
+        PromotionAd ad = ConverUtil.convert(adDTO, PromotionAd.class);
+        if (ad.getId() == null) {
+            ad.setCreateTime(new Date());
+            ad.setUpdateTime(new Date());
+            ad.setStatus(1);
+        } else {
+            ad.setUpdateTime(new Date());
+        }
+
+        ResponseDTO responseDTO = null;
+        try {
+            promotionAdService.saveOrUpdate(ad);
+            responseDTO = ResponseDTO.success();
+        } catch (Exception ex) {
+            responseDTO = ResponseDTO.ofError(ex.getMessage());
+        }
+        return responseDTO;
+    }
+
+    @Override
+    @GetMapping("/getAdById")
+    public PromotionAdDTO getAdById(Integer id) {
+        PromotionAd ad = promotionAdService.getById(id);
+        return ConverUtil.convert(ad, PromotionAdDTO.class);
     }
 }
