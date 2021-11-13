@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/edu-ad-boot/edu-ad-boot.iml" filepath="$PROJECT_DIR$/edu-ad-boot/edu-ad-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edu-ad-boot/edu-ad-boot-api/edu-ad-boot-api.iml" filepath="$PROJECT_DIR$/edu-ad-boot/edu-ad-boot-api/edu-ad-boot-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edu-ad-boot/edu-ad-boot-impl/edu-ad-boot-impl.iml" filepath="$PROJECT_DIR$/edu-ad-boot/edu-ad-boot-impl/edu-ad-boot-impl.iml" />
       <module fileurl="file://$PROJECT_DIR$/edu-bom/edu-bom.iml" filepath="$PROJECT_DIR$/edu-bom/edu-bom.iml" />
       <module fileurl="file://$PROJECT_DIR$/edu-boss-boot/edu-boss-boot.iml" filepath="$PROJECT_DIR$/edu-boss-boot/edu-boss-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/edu-common/edu-common.iml" filepath="$PROJECT_DIR$/edu-common/edu-common.iml" />
