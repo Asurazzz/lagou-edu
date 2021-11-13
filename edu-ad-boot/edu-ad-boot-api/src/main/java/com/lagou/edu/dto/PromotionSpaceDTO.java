@@ -1,6 +1,8 @@
 package com.lagou.edu.dto;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class PromotionSpaceDTO {
 
@@ -24,6 +26,16 @@ public class PromotionSpaceDTO {
     private Date updateTime;
 
     private Integer isDel;
+
+    private List<PromotionAdDTO> adDTOList;
+
+    public List<PromotionAdDTO> getAdDTOList() {
+        return adDTOList;
+    }
+
+    public void setAdDTOList(List<PromotionAdDTO> adDTOList) {
+        this.adDTOList = adDTOList;
+    }
 
     public Integer getId() {
         return id;
